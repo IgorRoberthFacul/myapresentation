@@ -222,9 +222,16 @@ function renderExperiences() {
     grid.innerHTML = experiencesHTML;
 }
 
-// Função para download do CV
 function downloadCV() {
-    const cvContent = `
+    const link = document.createElement('a');
+    link.href = './curriculo2025.pdf';
+    link.download = 'curriculo-igor-roberth-qa.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+} 
+`
 CURRÍCULO PROFISSIONAL - IGOR ROBERTH
 ANALISTA DE QA
 
@@ -259,13 +266,15 @@ COMPETÊNCIAS TÉCNICAS:
 • Colaboração em Equipes Ágeis
 `;
 
-    const link = document.createElement('a');
-    link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(cvContent);
-    link.download = 'curriculo-igor-roberth-qa.txt';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-}
+    function baixarCV() {
+        const link = document.createElement('a');
+        link.href = './curriculo2025.pdf';
+        link.download = 'curriculo.pdf'; // nome do arquivo que será salvo
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
 
 // Inicializar a página
 document.addEventListener('DOMContentLoaded', function() {
