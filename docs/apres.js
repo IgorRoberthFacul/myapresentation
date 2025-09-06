@@ -150,7 +150,7 @@ function getExperienceDetails(experienceId) {
             description: "A Culture Builders é uma consultoria em desenvolvimento humano que combina ciência comportamental, tecnologia e inovação para apoiar empresas no crescimento sustentável.",
             responsibilities: [
                 "Execução de testes manuais em produtos de gestão de talentos",
-                "Validação de funcionalidades do Talent Flow (software de gestão baseado em soft skills)",
+                "Validação de funcionalidades do Talent Flow",
                 "Testes de compliance para o agente conversacional Verus (NR-1)",
                 "Identificação de riscos psicossociais através de testes especializados",
                 "Colaboração com equipe de desenvolvimento para melhorias contínuas",
