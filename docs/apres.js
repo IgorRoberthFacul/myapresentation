@@ -57,7 +57,7 @@ function createExperienceCard(experience) {
 // Função para abrir detalhes
 function openDetails(experienceId) {
     localStorage.setItem('selectedExperienceId', experienceId);
-    window.open('./detalhes.html', '_blank');
+    window.open('/docs/detalhes', '_blank');
 }
 
 // Renderizar experiências
