@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Profissional - Igor Roberth</title>
+    <link rel="stylesheet" href="../css/apres.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <div class="container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="profile-image">
+                <img 
+                    src="../image/1682905858778.webp"
+                    alt="Foto de Igor Roberth"
+                    class="profile-img"
+                >
+                <div class="profile-img-overlay"></div>
+            </div>
+            <h1 class="profile-name">Igor Roberth</h1>
+            <div class="profile-divider"></div>
+        </div>
+
+        <!-- Contact Section - Movida para o topo -->
+        <div class="contact-section-top">
+            <div class="contact-grid-horizontal">
+                <a href="mailto:igorroberthm@gmail.com" class="contact-card-horizontal">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-info">
+                        <h4>Email</h4>
+                        <p>igorroberthm@gmail.com</p>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/igorroberth/" class="contact-card-horizontal" target="_blank">
+                    <div class="contact-icon">💼</div>
+                    <div class="contact-info">
+                        <h4>LinkedIn</h4>
+                        <p>Conecte-se comigo</p>
+                    </div>
+                </a>
+                <a href="https://github.com/IgorRoberth" class="contact-card-horizontal" target="_blank">
+                    <div class="contact-icon">💻</div>
+                    <div class="contact-info">
+                        <h4>GitHub</h4>
+                        <p>Veja meus projetos</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Download CV Button -->
+        <div class="download-section">
+            <button onclick="downloadCV()" class="download-btn">
+                <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7,10 12,15 17,10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Baixar Currículo
+            </button>
+        </div>
+        
+        <!-- Experiences Section -->
+        <div class="experiences-section">
+            <h2 class="section-title">Experiências Profissionais</h2>
+            <div class="experiences-grid" id="experiencesGrid">
+                <!-- Experiências serão inseridas via JavaScript -->
+            </div>
+        </div>
+        <!-- Footer -->
+            <footer class="footer">
+                <p>© 2025 Igor Roberth. Todos os direitos reservados.</p>
+            </footer>
+    </div>
+    <script src="../js/apres.js"></script>
+</body>
+</html>
