@@ -169,7 +169,7 @@ function getExperienceDetails(experienceId) {
             period: "Julho 2025 - Presente",
             company: "Foursys",
             location: "São Paulo, Brasil - Remoto",
-            description: "Atuação em projeto de modularização do código relacionado ao Aplicativo Next, focando na qualidade e estabilidade da aplicação mobile.",
+            description: "Atuação em projeto de Análise de Crédito do Bradesco, focando na validação de APIs, consistência de dados e classificação de clientes por indicadores de aprovação de crédito.",
             responsibilities: [
                 "Atualmente, estou participando de um projeto voltado para Análise de Crédito, focado na validação e disponibilização de crédito para clientes do Bradesco.",
                 "Meu trabalho envolve a validação de testes de API, garantindo que os dados retornados pelos sistemas estejam corretos e consistentes.",
