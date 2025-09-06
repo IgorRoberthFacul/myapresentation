@@ -150,7 +150,7 @@ function getExperienceDetails(experienceId) {
             description: "A Culture Builders é uma consultoria em desenvolvimento humano que combina ciência comportamental, tecnologia e inovação para apoiar empresas no crescimento sustentável.",
             responsibilities: [
                 "Execução de testes manuais em produtos de gestão de talentos",
-                "Validação de funcionalidades do Talent Flow",
+                "Validação de funcionalidades do Talent Flow (software de gestão baseado em soft skills)",
                 "Testes de compliance para o agente conversacional Verus (NR-1)",
                 "Identificação de riscos psicossociais através de testes especializados",
                 "Colaboração com equipe de desenvolvimento para melhorias contínuas",
@@ -271,30 +271,3 @@ COMPETÊNCIAS TÉCNICAS:
 document.addEventListener('DOMContentLoaded', function() {
     renderExperiences();
 });
-
-// Função para abrir detalhes em iframe (URL nunca muda)
-function openDetails(experienceId) {
-    localStorage.setItem('selectedExperienceId', experienceId);
-    
-    // Criar overlay com iframe
-    const overlay = document.createElement('div');
-    overlay.className = 'iframe-overlay';
-    overlay.innerHTML = `
-        <div class="iframe-container">
-            <button class="iframe-close" onclick="closeIframe()">×</button>
-            <iframe src="./detalhes.html" class="details-iframe"></iframe>
-        </div>
-    `;
-    
-    document.body.appendChild(overlay);
-    document.body.style.overflow = 'hidden';
-}
-
-// Função para fechar iframe
-function closeIframe() {
-    const overlay = document.querySelector('.iframe-overlay');
-    if (overlay) {
-        overlay.remove();
-        document.body.style.overflow = 'auto';
-    }
-}
