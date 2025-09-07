@@ -60,10 +60,11 @@ body {
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #cbd5e1 50%, #94a3b8 75%, #64748b 100%) !important;
 }
 
+/* Estilo padrão (desktop e telas grandes) */
 .back-btn {
     position: fixed;
-    top: 8rem;
-    right: 9cm;
+    top: 7rem;
+    right: 7cm;
     background: #346af2;
     border: 1px solid rgba(64, 64, 226, 0.8);
     color: #f2f3f5;
@@ -224,10 +225,10 @@ body {
     }
     
     .back-btn {
-        top: 1rem;
-        left: 1rem;
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
+        top: 4rem;
+        right: 0.9rem;
+        padding: 0.6rem 0.5rem;
+        font-size: 0.5rem;
     }
     
     .tech-grid {
