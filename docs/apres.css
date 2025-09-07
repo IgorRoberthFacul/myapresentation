@@ -244,8 +244,6 @@ body {
     margin: 0 auto;
 }
 
-/* Modificar/substituir no arquivo apres.css */
-
 /* Cards de experiência sem animações */
 .experience-card {
     background: rgba(255, 255, 255, 0.9);
@@ -311,13 +309,6 @@ body {
     background: #bfdbfe;
     /* Remover transform e box-shadow animados */
 }
-
-/* Remover completamente as animações keyframes não utilizadas */
-/* Comentar ou remover estas seções se existirem:
-@keyframes fadeInUp { ... }
-@keyframes slideInLeft { ... }
-@keyframes loading { ... }
-*/
 
 /* Foto de perfil sem animações */
 .profile-img {
@@ -565,7 +556,7 @@ body {
 /* Responsividade */
 @media (max-width: 768px) {
     .profile-name {
-        font-size: 2.5rem;
+        font-size: 1.9rem;
     }
     
     .container {
@@ -573,8 +564,8 @@ body {
     }
 
     .profile-img {
-        width: 100px;
-        height: 100px;
+        width: 110px;
+        height: 110px;
     }
     
     .contact-grid-horizontal {
@@ -585,7 +576,8 @@ body {
     .contact-card-horizontal {
         width: 100%;
         max-width: 300px;
-        justify-content: center;
+        align-items: center; 
+        justify-content: baseline;
         text-align: center;
     }
     
@@ -597,13 +589,15 @@ body {
         min-height: auto;
         padding-bottom: 1rem;
     }
+
     
-    .details-btn {
-        position: static;
-        margin-top: 1rem;
-        width: 100%;
-        align-self: flex-start;
-    }
+ .details-btn {
+    position: static;
+    display: block;
+    width: 95%;          /* controla a largura */
+    margin: 0 auto 0.9rem auto; /* centraliza horizontal e afasta embaixo */
+    padding: 0.5rem 1rem; /* ajusta tamanho interno */
+}
     
     .card-title,
     .card-position {
@@ -612,38 +606,36 @@ body {
 }
 
 @media (max-width: 480px) {
-    .contact-section-top {
-        padding: 0 0.5rem;
-        margin-bottom: 2rem;
+    .contact-grid-horizontal {
+        flex-direction: column; /* mantém a ordem vertical */
+        align-items: center;    /* centraliza horizontalmente */
+        gap: 1rem;              /* espaçamento entre os botões */
     }
-    
+
     .contact-card-horizontal {
+        justify-content: flex-start; /* ou center, dependendo do alinhamento desejado */
+        width: 80%;                  /* opcional, ajusta tamanho do card */
         padding: 0.75rem 1rem;
-        min-width: auto;
     }
-    
+
     .contact-card-horizontal .contact-icon {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
+        margin-right: 1.5rem;       /* afasta ícone do texto */
     }
-    
+
+    .contact-card-horizontal .contact-info {
+        text-align: left;           /* mantém texto alinhado à esquerda */
+    }
+
     .contact-card-horizontal .contact-info h4 {
         font-size: 0.9rem;
     }
-    
+
     .contact-card-horizontal .contact-info p {
         font-size: 0.8rem;
     }
-    
-    .card-header {
-        padding: 1rem 1rem 0.5rem 1rem;
-    }
-    
-    .details-btn {
-        margin-top: 0.75rem;
-        padding: 0.4rem 0.8rem;
-        font-size: 0.8rem;
-    }
 }
+
 
 /* Versão com topo extra suave */
 .background-overlay {
@@ -671,4 +663,3 @@ body {
         );
     z-index: 1;
 }
-

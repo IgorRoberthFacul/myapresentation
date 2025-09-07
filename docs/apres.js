@@ -34,9 +34,6 @@ function createExperienceCard(experience) {
             <div class="card-header">
                 <h3 class="card-title">${experience.title}</h3>
                 <p class="card-position">${experience.position}</p>
-                <button class="details-btn" onclick="openDetails(${experience.id})">
-                    Detalhes
-                </button>
             </div>
             <div class="card-content">
                 <div class="content-section">
@@ -50,20 +47,21 @@ function createExperienceCard(experience) {
                     </div>
                 </div>
             </div>
+
+            <!-- botão agora está embaixo de tudo -->
+            <button class="details-btn" onclick="openDetails(${experience.id})">
+                Detalhes
+            </button>
         </div>
     `;
 }
 
+
 // Modificar a função openDetails para não abrir nova página
-// Função para abrir detalhes usando hash (URL limpa)
 function openDetails(experienceId) {
-    // Salvar ID no localStorage
     localStorage.setItem('selectedExperienceId', experienceId);
-    
-    // Usar hash para navegação limpa
     window.location.hash = `#detalhes/${experienceId}`;
-    
-    // Aguardar um pouco e redirecionar
+
     setTimeout(() => {
         window.location.href = './detalhes.html';
     }, 100);
