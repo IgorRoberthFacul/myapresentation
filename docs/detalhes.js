@@ -1,5 +1,4 @@
 // Dados detalhados das experiências
-// Corrigir a experiência 2 - remover aspas extras
 const experiencesDetails = {
     1: {
         title: "Culture Builders",
@@ -17,7 +16,8 @@ const experiencesDetails = {
             "Documentação de processos de teste e resultados"
         ],
         achievements: [
-            "Contribuição para redução de 40% nos bugs relacionados a soft skills",
+            "Contribuição para redução de 40% nos bugs relacionados a cadastros de admin e edição de usuários",
+            "Redução de erros no chat conversacional Verus",
             "Implementação de processos de teste para compliance NR-1",
             "Melhoria na qualidade dos produtos de gestão de talentos"
         ],
@@ -47,7 +47,7 @@ const experiencesDetails = {
     3: {
         title: "Plataforma de Ativos Financeiros",
         position: "Analista de QA",
-        period: "Maio 2024 - Presente",
+        period: "Maio 2024 - Novembro 2024",
         company: "Plataforma Financeira",
         location: "São Paulo, Brasil - Remoto",
         description: "Execução de testes detalhados em plataforma de compra e venda de ativos financeiros, com foco em segurança e automação.",
@@ -63,7 +63,6 @@ const experiencesDetails = {
         ],
         achievements: [
             "Desenvolvimento de mais de 50 scripts automatizados",
-            "Identificação e correção de 25+ vulnerabilidades de segurança",
             "Redução de 60% no tempo de execução de testes regressivos",
             "Melhoria na cobertura de testes para 85%"
         ],
