@@ -678,14 +678,3 @@ body {
         );
     z-index: 1;
 }
-
-/* REMOVER - Classes não utilizadas no index.html */
-
-/* 1. Profile container - não usado */
-.profile-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-left: 1rem;
-}

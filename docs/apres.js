@@ -163,7 +163,7 @@ function getExperienceDetails(experienceId) {
         },
         2: {
             title: "Foursys",
-            position: "Analista de teste/QA",
+            position: "Analista de QA",
             period: "Julho 2025 - Presente",
             company: "Foursys",
             location: "São Paulo, Brasil - Remoto",
