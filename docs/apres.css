@@ -79,11 +79,23 @@ body {
     box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.35);
 }
 
-/* Ajustar responsividade para mobile */
 @media (max-width: 768px) {
+    .profile-container {
+        display: flex;           /* organiza os filhos */
+        flex-direction: column;  /* empilha verticalmente */
+        align-items: flex-start; /* alinha à esquerda */
+        gap: 1rem;               /* espaçamento entre elementos */
+        margin-left: 1rem;       /* ajuste gradual para a esquerda */
+    }
+
     .profile-img {
-        width: 130px; /* Aumentado de 100px */
-        height: 130px; /* Aumentado de 100px */
+        width: 130px;
+        height: 130px;
+        margin: 0;               /* remove margens individuais */
+    }
+
+    .back-btn, h2 {
+        margin: 0;               /* remove margens individuais */
     }
 }
 
@@ -91,7 +103,7 @@ body {
 @media (max-width: 480px) {
     .profile-img {
         width: 120px;
-        height: 120px;
+        height: 10px;
     }
 }
 
@@ -140,8 +152,10 @@ body {
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    top: 7rem;
+    right: 7cm;
     max-width: 900px;
-    margin: 0 auto;
+    margin-left: 5.6rem;
     flex-wrap: wrap;
 }
 
@@ -608,19 +622,20 @@ body {
 @media (max-width: 480px) {
     .contact-grid-horizontal {
         flex-direction: column; /* mantém a ordem vertical */
-        align-items: center;    /* centraliza horizontalmente */
+        align-items: flex-start; /* alinha tudo à esquerda */
         gap: 1rem;              /* espaçamento entre os botões */
+        margin-left: 3rem;               /* espaçamento entre os botões */
     }
 
     .contact-card-horizontal {
         justify-content: flex-start; /* ou center, dependendo do alinhamento desejado */
-        width: 80%;                  /* opcional, ajusta tamanho do card */
-        padding: 0.75rem 1rem;
+        width: 90%;                  /* opcional, ajusta tamanho do card */
+        padding: 0.75rem 0.8rem;
     }
 
     .contact-card-horizontal .contact-icon {
-        font-size: 1.7rem;
-        margin-right: 1.5rem;       /* afasta ícone do texto */
+        font-size: 1.5rem;
+        margin-right: 0rem;       /* afasta ícone do texto */
     }
 
     .contact-card-horizontal .contact-info {

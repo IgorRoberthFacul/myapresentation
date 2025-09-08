@@ -10,7 +10,7 @@ const experiences = [
     {
         id: 2,
         title: "Bradesco - Análise de Crédito",
-        position: "Analista de teste/QA",
+        position: "Analista de QA",
         description: "Atualmente, participo de um projeto web interno de Análise de Crédito para o Bradesco, automatizando a busca de informações em sistemas críticos como Receita Federal, SPC, Serasa, SIBA e RESG. Realizo validação de testes de API com Insomnia, Jira e Xray, além de análise de dados no MongoDB. Também valido critérios de crédito, classificando clientes por indicadores visuais: verde (apto), amarelo (pendências), vermelho (negado) e cinza (dados insuficientes).",
         technologies: ["MongoDB", "Insomnia", "Jira", "Xray"]
     },
