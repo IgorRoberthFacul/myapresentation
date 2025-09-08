@@ -48,7 +48,7 @@ const experiencesDetails = {
         title: "Plataforma de Ativos Financeiros",
         position: "Analista de QA",
         period: "Maio 2024 - Novembro 2024",
-        company: "Plataforma Financeira",
+        company: "Foursys",
         location: "São Paulo, Brasil - Remoto",
         description: "Execução de testes detalhados em plataforma de compra e venda de ativos financeiros, com foco em segurança e automação.",
         responsibilities: [
