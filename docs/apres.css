@@ -629,7 +629,7 @@ body {
 
     .contact-card-horizontal {
         justify-content: flex-start; /* ou center, dependendo do alinhamento desejado */
-        width: 90%;                  /* opcional, ajusta tamanho do card */
+        width: 85%;                  /* opcional, ajusta tamanho do card */
         padding: 0.75rem 0.8rem;
     }
 
@@ -677,4 +677,15 @@ body {
             transparent 100%              /* Transparente no topo */
         );
     z-index: 1;
+}
+
+/* REMOVER - Classes não utilizadas no index.html */
+
+/* 1. Profile container - não usado */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-left: 1rem;
 }

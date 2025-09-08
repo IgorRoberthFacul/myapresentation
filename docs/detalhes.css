@@ -60,7 +60,6 @@ body {
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #cbd5e1 50%, #94a3b8 75%, #64748b 100%) !important;
 }
 
-/* Estilo padrão */
 .back-btn {
     position: fixed;
     top: 7rem;
@@ -194,7 +193,6 @@ body {
     border-color: #93c5fd;
 }
 
-/* Animações */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -206,7 +204,6 @@ body {
     }
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .details-container {
         padding: 3rem 1rem 2rem 1rem;
@@ -224,22 +221,10 @@ body {
         font-size: 1.2rem;
     }
     
-    /* Responsividade para mobile */
-    @media (max-width: 768px) {
-    .details-btn {
-        position: static;
-        margin-top: 1rem;
-        width: 100%;
-    }
-    
-    .card-title {
-        padding-right: 0;
-    }
-
     .back-btn {
-        display: none; /* botão só aparece no desktop */
+        display: none;
     }
-}}
+}
 
 @media (max-width: 480px) {
     .details-container {
