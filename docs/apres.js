@@ -64,10 +64,10 @@ function openDetails(experienceId) {
     button.disabled = true;
 
     localStorage.setItem('selectedExperienceId', experienceId);
-    window.location.hash = `#detalhes/${experienceId}`;
+    window.location.href = `/detalhes/=${experienceId}`;
 
     setTimeout(() => {
-        window.location.href = './detalhes.html';
+        window.location.href = '/detalhes';
     }, 500);
 }
 
