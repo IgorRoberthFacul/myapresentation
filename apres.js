@@ -68,7 +68,6 @@ function openDetails(experienceId) {
     }, 3000); 
     
     try {
-        // Redirecionar para a página de detalhes
         window.location.href = '/detalhes';
     } catch (error) {
         clearTimeout(timeoutId);
@@ -77,7 +76,7 @@ function openDetails(experienceId) {
         console.error('Erro ao navegar:', error);
     }
 }
-// Nova função para mostrar modal de detalhes
+
 function showDetailsModal(experienceId) {
     const experience = getExperienceDetails(experienceId);
     
@@ -145,7 +144,7 @@ function closeDetailsModal() {
     }
 }
 
-// Dados das experiências detalhadas (mover do detalhes.js)
+// Dados das experiências detalhadas
 function getExperienceDetails(experienceId) {
     const experiencesDetails = {
         1: {
@@ -239,15 +238,6 @@ function downloadCV() {
     document.body.removeChild(link);
 } 
 `
-CURRÍCULO PROFISSIONAL - IGOR ROBERTH
-ANALISTA DE QA
-
-===========================================
-
-RESUMO PROFISSIONAL:
-Analista de QA com sólida experiência em testes manuais e automatizados, atuando em diferentes setores desde consultoria em desenvolvimento humano até plataformas financeiras. Expertise em ferramentas como Java, Selenium, Jira, GitHub e metodologias BDD, com foco em qualidade de software e segurança.
-
-EXPERIÊNCIAS PROFISSIONAIS:
 
 ${experiences.map(exp => `
 ${exp.title}
@@ -333,7 +323,6 @@ const skillsObserver = new IntersectionObserver((entries) => {
     rootMargin: '0px 0px -50px 0px'
 });
 
-// Inicializar animações
 document.addEventListener('DOMContentLoaded', () => {
     // Configurar estado inicial dos cards
     const skillCards = document.querySelectorAll('.skill-card');

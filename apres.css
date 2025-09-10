@@ -275,23 +275,6 @@ body {
     background: rgba(1, 98, 209, 0.95);
 }
 
-/* Botão detalhes */
-.details-btn {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    background: linear-gradient(135deg, #0906dfef, #036ae8);
-    color: rgb(40, 14, 188);   
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.375rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-}
-
 .section-title {
     font-size: 2rem;
     color: rgb(44, 6, 234);
@@ -441,7 +424,7 @@ body {
     right: 1.5rem;
     /* Estilo base para todos os botões */
     .btn-primary {
-        background: linear-gradient(135deg, #d73bf6, #2a10bf);
+        background: linear-gradient(135deg, #7d3bf6, #2a10bf);
         border: 1px solid #6f1ab9;
         color: rgb(35, 8, 114);
         padding: 0.75rem 1.5rem;
@@ -460,9 +443,9 @@ body {
     }
     
     .btn-primary:hover {
-        background: linear-gradient(135deg, #c026d3, #3b82f6);
+        background: linear-gradient(135deg, #c026d3, #1460da);
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(31, 100, 203, 0.5);
+        box-shadow: 0 8px 25px rgba(1, 76, 190, 0.5);
     }
     
     .btn-primary:active {
@@ -560,12 +543,12 @@ body {
     background: rgba(255, 255, 255, 0.95);
 }
 
-/* Botão detalhes sem animações */
+/* Botão detalhes */
 .details-btn {
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
-    background: linear-gradient(135deg, #7804c0a5, #dce6f2);
+    background: linear-gradient(135deg, #8403d5cf, #03418c);
     color: white;   
     border: none;
     padding: 0.5rem 1rem;
@@ -797,7 +780,6 @@ body {
     }
 }
 
-
 /* Versão com topo extra suave */
 .background-overlay {
     position: absolute;
@@ -807,17 +789,19 @@ body {
     bottom: 0;
     background: 
         linear-gradient(to bottom, 
-            rgba(88, 28, 135, 0.2) 0%,    /* Roxo bem suave no topo */
-            rgba(67, 56, 202, 0.15) 12%,  /* Roxo/azul quase transparente */
-            rgba(29, 78, 216, 0.08) 25%,  /* Azul muito suave */
-            transparent 40%               /* Transparente mais cedo */
+            rgba(0, 0, 0, 0.7) 0%, 
+            rgb(38, 1, 61) 12%,  
+            rgba(153, 2, 247, 0.7) 35%,
+            rgba(34, 1, 60, 0.889) 50%,
+            rgba(79, 5, 132, 0.814) 70%,
+            transparent 100%
         ),
         linear-gradient(to top, 
-            rgba(67, 12, 207, 0.9) 0%,    /* Roxo escuro na base */
-            rgba(67, 56, 202, 0.7) 25%,   /* Roxo/azul */
-            rgba(29, 78, 216, 0.5) 50%,   /* Azul */
-            rgba(37, 99, 235, 0.3) 60%,   /* Azul claro */
-            transparent 100%              /* Transparente no topo */
+            rgba(79, 5, 132, 0.814) 30%,
+            rgba(34, 1, 60, 0.889) 50%,
+            rgba(99, 4, 158, 0.7) 65%,  
+            rgb(38, 1, 61) 88%,  
+            rgba(0, 0, 0, 0.7) 0% 
         );
     z-index: 1;
 }
