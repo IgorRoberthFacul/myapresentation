@@ -56,14 +56,26 @@ function createExperienceCard(experience) {
     `;
 }
 
-// Modificar a função openDetails para não abrir nova página
-// Modificar a função openDetails para não incluir o ID na URL
 function openDetails(experienceId) {
     const button = event.currentTarget;
     button.innerHTML = 'Carregando...';
     button.disabled = true;
-    localStorage.setItem('selectedExperienceId', experienceId);
-    window.location.href = '/detalhes';
+    
+    localStorage.setItem('selectedExperienceId', experienceId);    
+    const timeoutId = setTimeout(() => {
+        button.innerHTML = 'Detalhes';
+        button.disabled = false;
+    }, 3000); 
+    
+    try {
+        // Redirecionar para a página de detalhes
+        window.location.href = '/detalhes';
+    } catch (error) {
+        clearTimeout(timeoutId);
+        button.innerHTML = 'Detalhes';
+        button.disabled = false;
+        console.error('Erro ao navegar:', error);
+    }
 }
 // Nova função para mostrar modal de detalhes
 function showDetailsModal(experienceId) {
