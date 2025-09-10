@@ -67,7 +67,7 @@ function openDetails(experienceId) {
     window.location.hash = `#detalhes/${experienceId}`;
 
     setTimeout(() => {
-        window.location.href = './detalhes.html';
+        window.location.href = '/detalhes';
     }, 500);
 }
 
