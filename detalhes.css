@@ -58,17 +58,19 @@
 body {
     background: 
     linear-gradient(to bottom, 
-            rgba(9, 55, 183, 0.712) 0%,    /* Roxo bem suave no topo */
-            rgba(9, 55, 183, 0.712) 25%,  /* Roxo/azul quase transparente */
-            rgba(9, 55, 183, 0.712) 100%,  /* Azul muito suave */
-            transparent 40%               /* Transparente mais cedo */
+            rgba(0, 0, 0, 0.7) 0%, 
+            rgb(38, 1, 61) 12%,  
+            rgba(153, 2, 247, 0.7) 35%,
+            rgba(34, 1, 60, 0.889) 50%,
+            rgba(79, 5, 132, 0.814) 70%,
+            transparent 100%
         ),
         linear-gradient(to top, 
-            rgba(67, 12, 207, 0.9) 0%,    /* Roxo escuro na base */
-            rgba(67, 56, 202, 0.7) 25%,   /* Roxo/azul */
-            rgba(29, 78, 216, 0.5) 50%,   /* Azul */
-            rgba(37, 99, 235, 0.3) 60%,   /* Azul claro */
-            transparent 100%              /* Transparente no topo */
+            rgba(79, 5, 132, 0.814) 30%,
+            rgba(34, 1, 60, 0.889) 50%,
+            rgba(99, 4, 158, 0.7) 65%,  
+            rgb(38, 1, 61) 88%,  
+            rgba(0, 0, 0, 0.7) 0% 
         );
 }
 
