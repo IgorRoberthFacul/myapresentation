@@ -57,20 +57,14 @@ function createExperienceCard(experience) {
 }
 
 // Modificar a função openDetails para não abrir nova página
+// Modificar a função openDetails para não incluir o ID na URL
 function openDetails(experienceId) {
     const button = event.currentTarget;
     button.innerHTML = 'Carregando...';
     button.disabled = true;
-
-    // Salvar o ID no localStorage
     localStorage.setItem('selectedExperienceId', experienceId);
-    
-    // Redirecionar diretamente para a página de detalhes
-    window.location.href = `/detalhes/${experienceId}`;
-    
-    // Remover o setTimeout que causa redirecionamento duplo
+    window.location.href = '/detalhes';
 }
-
 // Nova função para mostrar modal de detalhes
 function showDetailsModal(experienceId) {
     const experience = getExperienceDetails(experienceId);
