@@ -1,16 +1,7 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
-    { "source": "/detalhes/:id", "destination": "/docs/detalhes.html" },
-    { "source": "/detalhes", "destination": "/docs/detalhes.html" },
-    { "source": "/", "destination": "/docs/index.html" },
-    { "source": "/(.*)", "destination": "/docs/$1" }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    }
+    { "source": "/detalhes/:id", "destination": "/detalhes.html" }
   ]
 }
