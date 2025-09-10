@@ -70,8 +70,26 @@ const experiencesDetails = {
     }
 };
 
+// Adicionar no início do arquivo, antes da função renderExperienceDetails
+
+// Função para obter o ID da experiência da URL
+function getExperienceIdFromUrl() {
+    // Verificar se há um ID na URL
+    const path = window.location.pathname;
+    const matches = path.match(/\/detalhes\/(\d+)/);
+    
+    if (matches && matches[1]) {
+        return matches[1];
+    }
+    
+    // Se não encontrar na URL, tenta buscar do localStorage
+    return localStorage.getItem('selectedExperienceId');
+}
+
+// Modificar a função renderExperienceDetails
 function renderExperienceDetails() {
-    const experienceId = localStorage.getItem('selectedExperienceId');
+    // Obter ID da URL ou do localStorage
+    const experienceId = getExperienceIdFromUrl();
     const experience = experiencesDetails[experienceId];
     
     if (!experience) {
@@ -82,6 +100,7 @@ function renderExperienceDetails() {
         return;
     }
     
+    // Resto do código permanece igual
     const detailsHTML = `
         <h1 class="details-title">${experience.title}</h1>
         <p class="details-position">${experience.position}</p>

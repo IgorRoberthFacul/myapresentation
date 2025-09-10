@@ -47,27 +47,34 @@ function createExperienceCard(experience) {
                     </div>
                 </div>
             </div>
-            <button class="details-btn" onclick="openDetails(${experience.id}, this)">
+
+            <!-- botão agora está embaixo de tudo -->
+            <button class="details-btn" onclick="openDetails(${experience.id})">
                 Detalhes
             </button>
         </div>
     `;
 }
 
-// Função para abrir detalhes no modal
-function openDetails(experienceId, button) {
+// Modificar a função openDetails para não abrir nova página
+// Modificar a função openDetails para usar URLs limpas
+function openDetails(experienceId) {
+    const button = event.currentTarget;
     button.innerHTML = 'Carregando...';
     button.disabled = true;
 
-    showDetailsModal(experienceId);
-
-    setTimeout(() => {
-        button.innerHTML = 'Detalhes';
-        button.disabled = false;
-    }, 300);
+    // Salvar o ID no localStorage
+    localStorage.setItem('selectedExperienceId', experienceId);
+    
+    // Redirecionar para a URL limpa
+    window.location.href = `/detalhes/${experienceId}`;
 }
 
-// Função para mostrar modal de detalhes
+    setTimeout(() => {
+        window.location.href = '/detalhes';
+    }, 500);
+
+// Nova função para mostrar modal de detalhes
 function showDetailsModal(experienceId) {
     const experience = getExperienceDetails(experienceId);
     
@@ -75,10 +82,7 @@ function showDetailsModal(experienceId) {
         alert('Experiência não encontrada');
         return;
     }
-
-    // Remover modal antigo se existir
-    closeDetailsModal();
-
+    
     const modal = document.createElement('div');
     modal.className = 'details-modal';
     modal.innerHTML = `
@@ -124,12 +128,12 @@ function showDetailsModal(experienceId) {
             </div>
         </div>
     `;
-
+    
     document.body.appendChild(modal);
-    document.body.style.overflow = 'hidden'; // Bloquear scroll
+    document.body.style.overflow = 'hidden'; // Impedir scroll da página
 }
 
-// Fechar modal
+// Função para fechar modal
 function closeDetailsModal() {
     const modal = document.querySelector('.details-modal');
     if (modal) {
@@ -138,7 +142,7 @@ function closeDetailsModal() {
     }
 }
 
-// Dados detalhados das experiências
+// Dados das experiências detalhadas (mover do detalhes.js)
 function getExperienceDetails(experienceId) {
     const experiencesDetails = {
         1: {
@@ -171,11 +175,10 @@ function getExperienceDetails(experienceId) {
             location: "São Paulo, Brasil - Remoto",
             description: "Atuação em projeto de Análise de Crédito do Bradesco, focando na validação de APIs, consistência de dados e classificação de clientes por indicadores de aprovação de crédito.",
             responsibilities: [
-                "Validação de APIs e consistência de dados",
-                "Uso de Insomnia para testes de endpoints",
-                "Gestão de testes com Jira e Xray",
-                "Análise de dados com MongoDB",
-                "Classificação de clientes por indicadores visuais"
+                "Atualmente, estou participando de um projeto voltado para Análise de Crédito, focado na validação e disponibilização de crédito para clientes do Bradesco.",
+                "Meu trabalho envolve a validação de testes de API, garantindo que os dados retornados pelos sistemas estejam corretos e consistentes.",
+                "Utilizo ferramentas como Insomnia para testes de endpoints, Jira e Xray para gestão e rastreabilidade de testes, e MongoDB para análise e armazenamento de dados.",
+                "Realizo validações de valores e critérios de crédito, assegurando que os clientes sejam corretamente classificados por indicadores visuais."
             ],
             achievements: [
                 "Agilização e automação da análise de crédito, garantindo rapidez, precisão e confiabilidade nas decisões financeiras."
@@ -190,11 +193,11 @@ function getExperienceDetails(experienceId) {
             location: "São Paulo, Brasil - Remoto",
             description: "Execução de testes detalhados em plataforma de compra e venda de ativos financeiros, com foco em segurança e automação.",
             responsibilities: [
-                "Planejamento e execução de planos de teste",
-                "Análise de requisitos e escrita de casos de teste",
+                "Apoio desde planejamento até execução de planos de teste",
+                "Análise de requisitos e escrita de casos de teste detalhados",
                 "Desenvolvimento de scripts automatizados com Java, JUnit e Selenium",
-                "Testes de segurança para identificação de vulnerabilidades",
-                "Documentação de defeitos no GitHub"
+                "Execução de testes de segurança para identificar vulnerabilidades",
+                "Documentação de defeitos utilizando GitHub"
             ],
             achievements: [
                 "Desenvolvimento de mais de 50 scripts automatizados",
@@ -205,6 +208,7 @@ function getExperienceDetails(experienceId) {
             technologies: ["Java", "JUnit", "Selenium", "GitHub"]
         }
     };
+    
     return experiencesDetails[experienceId];
 }
 
@@ -218,23 +222,10 @@ document.addEventListener('keydown', function(e) {
 // Renderizar experiências
 function renderExperiences() {
     const grid = document.getElementById('experiencesGrid');
-    if (!grid) return;
     const experiencesHTML = experiences.map(exp => createExperienceCard(exp)).join('');
     grid.innerHTML = experiencesHTML;
 }
 
-// Captura id da URL e abre modal automaticamente
-document.addEventListener('DOMContentLoaded', function() {
-    renderExperiences();
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const experienceId = urlParams.get('id');
-    if (experienceId) {
-        showDetailsModal(Number(experienceId));
-    }
-});
-
-// Função para download do CV
 function downloadCV() {
     const link = document.createElement('a');
     link.href = './curriculo2025.pdf';
@@ -243,8 +234,7 @@ function downloadCV() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-}
-
+} 
 `
 CURRÍCULO PROFISSIONAL - IGOR ROBERTH
 ANALISTA DE QA
