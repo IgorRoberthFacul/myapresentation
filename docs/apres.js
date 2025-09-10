@@ -56,15 +56,19 @@ function createExperienceCard(experience) {
     `;
 }
 
-
 // Modificar a função openDetails para não abrir nova página
 function openDetails(experienceId) {
+
+    const button = event.currentTarget;
+    button.innerHTML = 'Carregando...';
+    button.disabled = true;
+
     localStorage.setItem('selectedExperienceId', experienceId);
     window.location.hash = `#detalhes/${experienceId}`;
 
     setTimeout(() => {
         window.location.href = './detalhes.html';
-    }, 100);
+    }, 500);
 }
 
 // Nova função para mostrar modal de detalhes
@@ -76,7 +80,6 @@ function showDetailsModal(experienceId) {
         return;
     }
     
-    // Criar modal
     const modal = document.createElement('div');
     modal.className = 'details-modal';
     modal.innerHTML = `
@@ -132,7 +135,7 @@ function closeDetailsModal() {
     const modal = document.querySelector('.details-modal');
     if (modal) {
         modal.remove();
-        document.body.style.overflow = 'auto'; // Restaurar scroll
+        document.body.style.overflow = 'auto';
     }
 }
 
@@ -277,4 +280,90 @@ COMPETÊNCIAS TÉCNICAS:
 // Inicializar a página
 document.addEventListener('DOMContentLoaded', function() {
     renderExperiences();
+});
+
+// Animação das barras de skill
+function animateSkillBars() {
+    const skillBars = document.querySelectorAll('.level-bar');
+    
+    skillBars.forEach(bar => {
+        const width = bar.parentElement.parentElement.querySelector('.skill-card').getAttribute('data-width') || 
+                     bar.getAttribute('data-width');
+        if (width) {
+            bar.style.setProperty('--skill-width', width + '%');
+        }
+    });
+}
+
+// Intersection Observer para animações
+const skillsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Animar barras de progresso
+            const skillBars = entry.target.querySelectorAll('.level-bar');
+            skillBars.forEach((bar, index) => {
+                setTimeout(() => {
+                    const skillCard = bar.closest('.skill-card');
+                    const width = skillCard.getAttribute('data-width') || 
+                                 bar.getAttribute('data-width');
+                    if (width) {
+                        bar.style.setProperty('--skill-width', width + '%');
+                    }
+                }, index * 200);
+            });
+            
+            // Animar cards
+            const skillCards = entry.target.querySelectorAll('.skill-card');
+            skillCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        }
+    });
+}, {
+    threshold: 0.3,
+    rootMargin: '0px 0px -50px 0px'
+});
+
+// Inicializar animações
+document.addEventListener('DOMContentLoaded', () => {
+    // Configurar estado inicial dos cards
+    const skillCards = document.querySelectorAll('.skill-card');
+    skillCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.6s ease-out';
+    });
+    
+    // Configurar larguras das barras
+    const skillData = {
+        'Testes Automatizados': 95,
+        'Testes Manuais': 90,
+        'API Testing': 95,
+        'Java': 85,
+        'Selenium': 90,
+        'JUnit': 80,
+        'Jira & Xray': 95,
+        'MongoDB': 85,
+        'Insomnia': 90,
+        'Python': 60,
+        'Cypress': 45,
+        'AWS Testing': 30
+    };
+    
+    skillCards.forEach(card => {
+        const skillName = card.querySelector('h4').textContent;
+        const width = skillData[skillName];
+        if (width) {
+            card.setAttribute('data-width', width);
+        }
+    });
+    
+    // Observar seção de skills
+    const skillsSection = document.querySelector('.skills-section');
+    if (skillsSection) {
+        skillsObserver.observe(skillsSection);
+    }
 });

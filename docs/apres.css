@@ -10,7 +10,7 @@ body {
     line-height: 1.6;
     color: #333;
     min-height: 100vh;
-    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 25%, #2563eb 50%, #3b82f6 75%, #60a5fa 100%);
+    background: linear-gradient(135deg, #1e40af 0%, #1e40af 25%, #1e40af 50%, #1e40af 75%, #1e40af 100%);
     position: relative;
 }
 
@@ -32,7 +32,7 @@ body {
         ),
         /* Degradê dramático de baixo - tons roxos */
         linear-gradient(to top, 
-            rgba(88, 28, 135, 0.9) 0%,    /* Roxo escuro na base */
+            rgba(67, 56, 202, 0.7) 25%,    /* Roxo escuro na base */
             rgba(67, 56, 202, 0.7) 25%,   /* Roxo/azul */
             rgba(29, 78, 216, 0.5) 50%,   /* Azul */
             rgba(37, 99, 235, 0.3) 75%,   /* Azul claro */
@@ -59,8 +59,6 @@ body {
     display: inline-block;
     margin-bottom: 1.5rem;
 }
-
-/* Adicionar/modificar no arquivo apres.css */
 
 /* Aumentar tamanho da foto de perfil */
 .profile-img {
@@ -96,6 +94,7 @@ body {
 
     .back-btn, h2 {
         margin: 0;               /* remove margens individuais */
+        
     }
 }
 
@@ -258,7 +257,57 @@ body {
     margin: 0 auto;
 }
 
-/* Cards de experiência sem animações */
+/* Cards de experiência  */
+.experience-card {
+    background: rgba(63, 45, 45, 0.9);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hover estático */
+.experience-card:hover {
+    background: rgba(1, 98, 209, 0.95);
+}
+
+/* Botão detalhes */
+.details-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: linear-gradient(135deg, #0906dfef, #036ae8);
+    color: rgb(40, 14, 188);   
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: rgb(44, 6, 234);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.experiences-grid {
+    display: grid;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Cards de experiência */
 .experience-card {
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(16px);
@@ -274,36 +323,15 @@ body {
 /* Hover estático - apenas mudança de cor */
 .experience-card:hover {
     background: rgba(255, 255, 255, 0.95);
-    /* Remover transform e box-shadow animados */
-}
-
-/* Botão detalhes sem animações */
-.details-btn {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    background: #1d4ed8;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.375rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    cursor: pointer;
-    /* Remover transition */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 10;
 }
 
 /* Hover do botão sem animações */
 .details-btn:hover {
-    background: #1e40af;
-    /* Remover transform e box-shadow animados */
+    background: #5812da;
 }
 
 .details-btn:active {
-    background: #1e40af;
-    /* Remover transform */
+    background: #8704b6ab;
 }
 
 /* Badges de tecnologia sem animações */
@@ -314,17 +342,15 @@ body {
     border-radius: 9999px;
     font-size: 0.875rem;
     font-weight: 500;
-    /* Remover transition */
     margin: 0.125rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .tech-badge:hover {
     background: #bfdbfe;
-    /* Remover transform e box-shadow animados */
 }
 
-/* Foto de perfil sem animações */
+/* Foto de perfil*/
 .profile-img {
     width: 160px;
     height: 160px;
@@ -332,16 +358,14 @@ body {
     object-fit: cover;
     border: 4px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    /* Remover transition */
+    
 }
 
-/* Remover hover da foto */
 .profile-img:hover {
-    /* Manter igual ao estado normal */
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
-/* Botão download sem animações */
+/* Botão download */
 .download-btn {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(16px);
@@ -351,7 +375,7 @@ body {
     border-radius: 9999px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    /* Remover transition */
+    transition: all 0.3s ease;
     font-size: 1rem;
     font-weight: 500;
     display: inline-flex;
@@ -362,11 +386,10 @@ body {
 
 .download-btn:hover {
     background: rgba(255, 255, 255, 0.3);
-    /* Manter box-shadow igual */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
-/* Contatos sem animações */
+/* Contatos */
 .contact-card-horizontal {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(16px);
@@ -375,7 +398,6 @@ body {
     padding: 1rem 1.5rem;
     text-decoration: none;
     color: white;
-    /* Remover transition */
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -386,7 +408,6 @@ body {
 .contact-card-horizontal:hover {
     background: rgba(255, 255, 255, 0.25);
     color: white;
-    /* Remover transform e box-shadow animados */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -418,28 +439,154 @@ body {
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
-    background: #1d4ed8;
+    /* Estilo base para todos os botões */
+    .btn-primary {
+        background: linear-gradient(135deg, #d73bf6, #2a10bf);
+        border: 1px solid #6f1ab9;
+        color: rgb(35, 8, 114);
+        padding: 0.75rem 1.5rem;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        box-shadow: 0 4px 15px rgba(31, 100, 203, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .btn-primary:hover {
+        background: linear-gradient(135deg, #c026d3, #3b82f6);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(31, 100, 203, 0.5);
+    }
+    
+    .btn-primary:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 15px rgba(31, 100, 203, 0.3);
+    }
+    
+    /* Efeito shimmer para todos os botões */
+    .btn-primary::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: left 0.5s;
+    }
+    
+    .btn-primary:hover::after {
+        left: 100%;
+    }
+    
+    /* Modificar botões existentes para usar a classe base */
+    .details-btn {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        z-index: 10;
+        border-radius: 8px;
+    }
+    
+    .download-btn {
+        border-radius: 9999px;
+        padding: 0.75rem 2rem;
+    }
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.download-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.download-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.experiences-section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 2rem;
     color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.experiences-grid {
+    display: grid;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Cards de experiência sem animações */
+.experience-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hover estático - apenas mudança de cor */
+.experience-card:hover {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Botão detalhes sem animações */
+.details-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: linear-gradient(135deg, #7804c0a5, #dce6f2);
+    color: white;   
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 0.375rem;
     font-size: 0.875rem;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 10;
 }
 
+/* Hover do botão sem animações */
 .details-btn:hover {
-    background: #1e40af;
+    background: #560cecd4;
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .details-btn:active {
     transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(179, 52, 52, 0.1);
 }
 
 .card-content {
@@ -464,8 +611,6 @@ body {
     color: #4b5563;
     line-height: 1.625;
 }
-
-/* Adicionar/modificar no arquivo apres.css */
 
 /* Melhorar espaçamento da seção de tecnologias */
 .technologies {
@@ -506,21 +651,22 @@ body {
 
 /* Melhorar espaçamento dos badges de tecnologia */
 .tech-badge {
-    background: #dbeafe;
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
     color: #1e40af;
-    padding: 0.375rem 0.875rem; /* Aumentado padding */
+    padding: 0.5rem 1rem;
     border-radius: 9999px;
     font-size: 0.875rem;
-    font-weight: 500;
-    transition: all 0.3s ease; /* Melhorar transição */
-    margin: 0.125rem; /* Adicionar margem individual */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Adicionar sombra sutil */
+    font-weight: 600;
+    margin: 0.25rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #93c5fd;
 }
 
 .tech-badge:hover {
-    background: #bfdbfe;
-    transform: translateY(-1px); /* Leve elevação no hover */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #bfdbfe, #93c5fd);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(29, 78, 216, 0.2);
 }
 
 /* Responsividade para mobile */
@@ -659,22 +805,178 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    /* Degradê combinado com topo muito suave */
     background: 
-        /* Degradê muito suave do topo */
         linear-gradient(to bottom, 
             rgba(88, 28, 135, 0.2) 0%,    /* Roxo bem suave no topo */
             rgba(67, 56, 202, 0.15) 12%,  /* Roxo/azul quase transparente */
             rgba(29, 78, 216, 0.08) 25%,  /* Azul muito suave */
             transparent 40%               /* Transparente mais cedo */
         ),
-        /* Degradê dramático de baixo (mantido) */
         linear-gradient(to top, 
-            rgba(88, 28, 135, 0.9) 0%,    /* Roxo escuro na base */
+            rgba(67, 12, 207, 0.9) 0%,    /* Roxo escuro na base */
             rgba(67, 56, 202, 0.7) 25%,   /* Roxo/azul */
             rgba(29, 78, 216, 0.5) 50%,   /* Azul */
             rgba(37, 99, 235, 0.3) 60%,   /* Azul claro */
             transparent 100%              /* Transparente no topo */
         );
     z-index: 1;
+}
+
+/* Seção de Tecnologias Simples */
+.tech-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    text-align: center;
+}
+
+.tech-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.tech-group {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.tech-group-title {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.tech-group-title::before {
+    content: '🚀';
+    font-size: 1.2rem;
+}
+
+.tech-group:last-child .tech-group-title::before {
+    content: '📚';
+}
+
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.tech-badge-simple {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-badge-simple::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(144, 72, 72, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.tech-badge-simple:hover::before {
+    left: 100%;
+}
+
+.tech-badge-simple:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Cores por nível */
+.tech-badge-simple.expert {
+    background: linear-gradient(135deg, #d73bf6, #60a5fa);
+    border-color: #b42cd6;
+    box-shadow: 0 4px 15px rgba(31, 100, 203, 0.3);
+}
+
+.tech-badge-simple.advanced {
+    background: linear-gradient(135deg, #d73bf6, #60a5fa);
+    border-color: #3b82f6;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.tech-badge-simple.advanced:hover {
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+}
+
+.tech-badge-simple.learning {
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+    border-color: #8b5cf6;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+    animation: learningPulse 3s ease-in-out infinite;
+}
+
+.tech-badge-simple.learning:hover {
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+}
+
+@keyframes learningPulse {
+    0%, 100% { 
+        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+    }
+    50% { 
+        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.6);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .tech-section {
+        padding: 1.5rem 1rem;
+    }
+    
+    .tech-container {
+        gap: 2rem;
+    }
+    
+    .tech-group {
+        padding: 1.5rem;
+    }
+    
+    .tech-badges {
+        gap: 0.75rem;
+    }
+    
+    .tech-badge-simple {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-badges {
+        gap: 0.5rem;
+    }
+    
+    .tech-badge-simple {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .tech-group-title {
+        font-size: 1.2rem;
+    }
 }
