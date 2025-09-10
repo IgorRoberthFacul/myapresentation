@@ -1,8 +1,6 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/docs/$1" },
-    { "source": "/detalhes/:id", "destination": "/docs/detalhes.html" },
-    { "source": "/detalhes", "destination": "/docs/detalhes.html" },
-    { "source": "/", "destination": "/docs/index.html" }
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/detalhes.html", "destination": "/", "permanent": true }
   ]
 }

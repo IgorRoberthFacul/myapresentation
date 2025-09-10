@@ -64,7 +64,7 @@ function openDetails(experienceId) {
     button.disabled = true;
 
     localStorage.setItem('selectedExperienceId', experienceId);
-    window.location.href = `/detalhes/=${experienceId}`;
+    window.location.href = `/detalhes/${experienceId}`;
 
     setTimeout(() => {
         window.location.href = '/detalhes';
