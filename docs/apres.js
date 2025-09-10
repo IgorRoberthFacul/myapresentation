@@ -57,22 +57,19 @@ function createExperienceCard(experience) {
 }
 
 // Modificar a função openDetails para não abrir nova página
-// Modificar a função openDetails para usar URLs limpas
 function openDetails(experienceId) {
+
     const button = event.currentTarget;
     button.innerHTML = 'Carregando...';
     button.disabled = true;
 
-    // Salvar o ID no localStorage
     localStorage.setItem('selectedExperienceId', experienceId);
-    
-    // Redirecionar para a URL limpa
-    window.location.href = `/detalhes/${experienceId}`;
-}
+    window.location.hash = `#detalhes/${experienceId}`;
 
     setTimeout(() => {
-        window.location.href = '/detalhes';
+        window.location.href = './detalhes.html';
     }, 500);
+}
 
 // Nova função para mostrar modal de detalhes
 function showDetailsModal(experienceId) {
