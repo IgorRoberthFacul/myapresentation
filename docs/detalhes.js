@@ -70,10 +70,25 @@ const experiencesDetails = {
     }
 };
 
+// Função para obter o ID da experiência da URL
+function getExperienceIdFromUrl() {
+    const path = window.location.pathname;
+    const matches = path.match(/\/detalhes\/(\d+)/);
+    
+    if (matches && matches[1]) {
+        return matches[1];
+    }
+    // Se não encontrar na URL, tenta buscar do localStorage
+    return localStorage.getItem('selectedExperienceId');
+}
+
+// Modificar a função renderExperienceDetails
 function renderExperienceDetails() {
-    const experienceId = localStorage.getItem('selectedExperienceId');
+    // Obter ID da URL ou do localStorage
+    const experienceId = getExperienceIdFromUrl();
     const experience = experiencesDetails[experienceId];
     
+    // Resto da função permanece igual
     if (!experience) {
         document.getElementById('detailsCard').innerHTML = `
             <h2>Experiência não encontrada</h2>
