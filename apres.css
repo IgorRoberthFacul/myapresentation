@@ -806,6 +806,35 @@ body {
     z-index: 1;
 }
 
+.profile-container {
+  text-align: center;   /* centraliza os textos embaixo da imagem */
+}
+
+.profile-name {
+  font-family: 'Dancing Script', cursive; /* letra de mão */
+  font-size: 2rem;
+  color: #fff;
+}
+
+
+/* efeito máquina de escrever */
+.typewriter {
+  display: inline-block;  /* mantém só o texto animado inline, mas centralizado */
+  overflow: hidden;
+  border-right: .15em solid #300159;
+  white-space: nowrap;
+  animation: typing 3s steps(12, end), blink .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 10ch } /* 10 caracteres: "QA Engineer" */
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
 /* Seção de Tecnologias Simples */
 .tech-section {
     margin: 3rem 0;
